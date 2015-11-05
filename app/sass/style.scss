@@ -37,8 +37,12 @@ body {
 	from { -webkit-transform: translateX(100%); }
 }
 
-.start-page {
-	margin-top: 50%;
+h1:first-child {
+	font-size: 2.5em;
+}
+
+.pt-page h2 {
+	margin-top: 100px;
 }
 
 /* ----- submit button ----- */
