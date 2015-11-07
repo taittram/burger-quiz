@@ -11,7 +11,7 @@ h1:first-child {
   font-size: 2.5em; }
 
 .pt-page h2 {
-  margin-top: 100px; }
+  margin-top: 90px; }
 
 /* ----- page animations ----- */
 .pt-perspective {
@@ -39,8 +39,10 @@ h1:first-child {
 ul {
   margin-right: 40px; }
   ul li {
+    margin: 5px;
     display: inline-block;
     list-style: none;
+    font-size: 1.3em;
     height: 140px;
     width: 140px; }
 
