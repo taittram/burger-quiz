@@ -1,4 +1,6 @@
-// alt color 598EFF
+// alt background color 598EFF
+
+$pink: #E97E69;
 
 body {
   background-color : #5080E5;
@@ -10,22 +12,26 @@ body {
   overflow: auto;
 }
 
+h1:first-child {
+  font-size: 2.5em;
+}
+
+.pt-page h2 {
+  margin-top: 100px;
+}
+
 /* ----- page animations ----- */
 .pt-perspective {
 	position: relative;
 	width: 100%;
 	height: 100%;
-	-webkit-perspective: 1200px;
-	-moz-perspective: 1200px;
 	perspective: 1200px;
 }
 
 .pt-page-moveToLeft {
-	-webkit-animation: moveToLeft .6s ease both;
 	animation: moveToLeft .6s ease both;
 }
 .pt-page-moveFromRight {
-	-webkit-animation: moveFromRight .6s ease both;
 	animation: moveFromRight .6s ease both;
 }
 
@@ -37,17 +43,37 @@ body {
 	from { -webkit-transform: translateX(100%); }
 }
 
-h1:first-child {
-	font-size: 2.5em;
+/* ----- boxes ----- */
+
+ul {
+  margin-right: 35px;
+  li {
+    display: inline-block;
+    list-style: none;
+    height: 140px;
+    width: 140px;
+  }
 }
 
-.pt-page h2 {
-	margin-top: 100px;
+$box-color: #E5B850;
+
+.guess-box-1 {
+  border: 2px solid $box-color;
+}
+
+.guess-box-2 {
+  border: 2px solid $box-color;
+}
+
+.guess-box-3 {
+  border: 2px solid $box-color;
+}
+
+.guess-box-4 {
+  border: 2px solid $box-color;
 }
 
 /* ----- submit button ----- */
-
-$pink: #E97E69;
 
 @mixin round-button($baseColor:$pink, $hoverBaseColor:#333, $diameter:5vw) {
   background: $baseColor;

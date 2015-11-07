@@ -7,21 +7,23 @@ body {
   text-align: center;
   overflow: auto; }
 
+h1:first-child {
+  font-size: 2.5em; }
+
+.pt-page h2 {
+  margin-top: 100px; }
+
 /* ----- page animations ----- */
 .pt-perspective {
   position: relative;
   width: 100%;
   height: 100%;
-  -webkit-perspective: 1200px;
-  -moz-perspective: 1200px;
   perspective: 1200px; }
 
 .pt-page-moveToLeft {
-  -webkit-animation: moveToLeft .6s ease both;
   animation: moveToLeft .6s ease both; }
 
 .pt-page-moveFromRight {
-  -webkit-animation: moveFromRight .6s ease both;
   animation: moveFromRight .6s ease both; }
 
 @-webkit-keyframes moveToLeft {
@@ -33,11 +35,26 @@ body {
   from {
     -webkit-transform: translateX(100%); } }
 
-h1:first-child {
-  font-size: 2.5em; }
+/* ----- boxes ----- */
+ul {
+  margin-right: 40px; }
+  ul li {
+    display: inline-block;
+    list-style: none;
+    height: 140px;
+    width: 140px; }
 
-.pt-page h2 {
-  margin-top: 100px; }
+.guess-box-1 {
+  border: 2px solid #E5B850; }
+
+.guess-box-2 {
+  border: 2px solid #E5B850; }
+
+.guess-box-3 {
+  border: 2px solid #E5B850; }
+
+.guess-box-4 {
+  border: 2px solid #E5B850; }
 
 /* ----- submit button ----- */
 .btn-pink {
