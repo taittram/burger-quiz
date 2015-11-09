@@ -102,4 +102,16 @@ $(document).on('click', 'li', function() {
             $('.CA').addClass('correct');
         }
     }
+    console.log($('li').closest('h2').text());
 });
+
+/* 
+
+if ( $(this).closest('h2').text() === answers[i].question) {
+    $('.burger-box').append('<img src="../images/top-bun.svg" style="height:100px;width:100px;float:right"></img>');
+}
+ else if ( $(this).closest('h2').text() === answers[i].question) {
+    $('.burger-box').append('<img src="../images/lettuce.svg" style="height:100px;width:100px;float:right"></img>');
+}
+
+*/

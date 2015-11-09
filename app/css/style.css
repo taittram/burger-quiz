@@ -68,6 +68,14 @@ li.correct {
 li.wrong {
   background-color: #424D65; }
 
+.burger-box {
+  height: 100px;
+  width: 500px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border: 5px solid black; }
+
 .guess-box {
   background-color: #F29648; }
   .guess-box:hover {
