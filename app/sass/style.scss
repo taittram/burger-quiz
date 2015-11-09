@@ -21,8 +21,6 @@ h1:first-child {
   font-size: 1.7em;
 }
 
-
-
 /* ----- page animations ----- */
 .pt-perspective {
 	position: relative;
@@ -79,6 +77,14 @@ $box-color: #F29648;
 
 li.selected {
   border: 10px solid #F2E148;
+}
+
+li.correct {
+  background-color: #85B22C;
+}
+
+li.wrong {
+  background-color: #424D65;
 }
 
 .guess-box {

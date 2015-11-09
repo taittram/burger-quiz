@@ -62,6 +62,12 @@ a:hover {
 li.selected {
   border: 10px solid #F2E148; }
 
+li.correct {
+  background-color: #85B22C; }
+
+li.wrong {
+  background-color: #424D65; }
+
 .guess-box {
   background-color: #F29648; }
   .guess-box:hover {

@@ -33,15 +33,33 @@ fifth = {
     opt2: "Julia Child",
     opt3: "Bob Ross"
 },
-questions = [first, second, third, fourth, fifth];
+questions = [first, second, third, fourth, fifth],
+answers = [first, second, third, fourth, fifth],
+score = 0;
+
+$.fn.randomize = function(selector){
+    var $elems = selector ? $(this).find(selector) : $(this).children(),
+        $parents = $elems.parent();
+
+    $parents.each(function(){
+        $(this).children(selector).sort(function(){
+            return Math.round(Math.random()) - 0.5;
+        // }). remove().appendTo(this); // 2014-05-24: Removed `random` but leaving for reference. See notes under 'ANOTHER EDIT'
+        }).detach().appendTo(this);
+    });
+
+    return this;
+};
 
 function questionMaker(arr) {
-    var shifted = arr.shift();
-    $('.page-current').append("<h2 class='pt-page-moveFromRight'>" + shifted.question + "</h2>");
-    $('.page-current').append("<li class='guess-box pt-page-moveFromRight'><a>" + shifted.opt1 + "</a></li>");
-    $('.page-current').append("<li class='guess-box pt-page-moveFromRight'><a>" + shifted.opt3 + "</a></li>");
-    $('.page-current').append("<li class='guess-box pt-page-moveFromRight'><a>" + shifted.opt2 + "</a></li>");
-    $('.page-current').append("<li class='guess-box pt-page-moveFromRight'><a>" + shifted.answer + "</a></li>");
+    var shifted = arr.shift(),
+        pageC = $('.page-current');
+    pageC.append("<h2 class='pt-page-moveFromRight'>" + shifted.question + "</h2>");
+    pageC.append("<li class='guess-box pt-page-moveFromRight'><a>" + shifted.opt1 + "</a></li>");
+    pageC.append("<li class='guess-box pt-page-moveFromRight CA'><a>" + shifted.answer + "</a></li>");
+    pageC.append("<li class='guess-box pt-page-moveFromRight'><a>" + shifted.opt3 + "</a></li>");
+    pageC.append("<li class='guess-box pt-page-moveFromRight'><a>" + shifted.opt2 + "</a></li>");
+    $('div').randomize('li');
 }
 
 $(document).ready(function() {
@@ -69,10 +87,19 @@ $(document).ready(function() {
 
 	});
 
-
-
 });
 
 $(document).on('click', 'li', function() {
     $(this).addClass('selected');
+    for (var i = 0; i <= answers.length; i++) {
+        if ($(this).text() === answers[i].answer) {
+            $(this).addClass('correct');
+            score += 1;
+            $('li').not(this).addClass('wrong');
+        } else {
+            $('li').click(false);
+            $('li').not('.CA').addClass('wrong');
+            $('.CA').addClass('correct');
+        }
+    }
 });
