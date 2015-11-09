@@ -11,7 +11,8 @@ h1:first-child {
   font-size: 2.5em; }
 
 .pt-page h2 {
-  margin-top: 90px; }
+  margin-top: 90px;
+  font-size: 1.7em; }
 
 /* ----- page animations ----- */
 .pt-perspective {
@@ -37,26 +38,34 @@ h1:first-child {
 
 /* ----- boxes ----- */
 ul {
-  margin-right: 40px; }
-  ul li {
-    margin: 5px;
-    display: inline-block;
-    list-style: none;
-    font-size: 1.3em;
-    height: 140px;
-    width: 140px; }
+  text-align: center; }
 
-.guess-box-1 {
-  border: 2px solid #E5B850; }
+li {
+  margin: 30px 20px 30px 20px;
+  display: inline-block;
+  list-style: none;
+  font-size: 1.3em;
+  height: 150px;
+  width: 150px;
+  border-radius: 20px; }
 
-.guess-box-2 {
-  border: 2px solid #E5B850; }
+a {
+  text-decoration: none;
+  display: table-cell;
+  vertical-align: middle;
+  height: 150px;
+  width: 150px; }
 
-.guess-box-3 {
-  border: 2px solid #E5B850; }
+a:hover {
+  cursor: pointer; }
 
-.guess-box-4 {
-  border: 2px solid #E5B850; }
+li.selected {
+  border: 10px solid #F2E148; }
+
+.guess-box {
+  background-color: #F29648; }
+  .guess-box:hover {
+    background-color: #E5B850; }
 
 /* ----- submit button ----- */
 .btn-pink {

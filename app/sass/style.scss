@@ -18,7 +18,10 @@ h1:first-child {
 
 .pt-page h2 {
   margin-top: 90px;
+  font-size: 1.7em;
 }
+
+
 
 /* ----- page animations ----- */
 .pt-perspective {
@@ -46,33 +49,43 @@ h1:first-child {
 /* ----- boxes ----- */
 
 ul {
-  margin-right: 40px;
-  li {
-    margin: 5px;
+  text-align: center;
+}
+
+li {
+    margin: 30px 20px 30px 20px;
     display: inline-block;
     list-style: none;
     font-size: 1.3em;
-    height: 140px;
-    width: 140px;
+    height: 150px;
+    width: 150px;
+    border-radius: 20px;
+}
+
+a {
+    text-decoration: none;
+    display:table-cell;
+    vertical-align: middle;
+    height: 150px;
+    width: 150px;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+$hover-color: #E5B850;
+$box-color: #F29648;
+
+li.selected {
+  border: 10px solid #F2E148;
+}
+
+.guess-box {
+  background-color: $box-color;
+  &:hover {
+    background-color: $hover-color;
   }
-}
-
-$box-color: #E5B850;
-
-.guess-box-1 {
-  border: 2px solid $box-color;
-}
-
-.guess-box-2 {
-  border: 2px solid $box-color;
-}
-
-.guess-box-3 {
-  border: 2px solid $box-color;
-}
-
-.guess-box-4 {
-  border: 2px solid $box-color;
 }
 
 /* ----- submit button ----- */
