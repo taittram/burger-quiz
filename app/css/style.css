@@ -1,5 +1,5 @@
 body {
-  background-color: #5080E5;
+  background-color: #7BB7FA;
   color: white;
   font-family: Helvetica Neue;
   margin: 0;
@@ -63,7 +63,7 @@ li.selected {
   border: 10px solid #F2E148; }
 
 li.correct {
-  background-color: #85B22C; }
+  background-color: #44AE72; }
 
 li.wrong {
   background-color: #424D65; }
@@ -73,20 +73,19 @@ li.wrong {
   width: 500px;
   position: absolute;
   bottom: 0;
-  right: 0;
-  border: 5px solid black; }
+  right: 0; }
 
 .guess-box {
-  background-color: #F29648; }
+  background-color: #AE5D56; }
   .guess-box:hover {
     background-color: #E5B850; }
 
 /* ----- submit button ----- */
 .btn-pink {
-  background: #E97E69;
+  background: #FB9D94;
   border: 3px solid #fff;
   border-radius: 100%;
-  box-shadow: 0 -2px 0 3px #e2583d inset, 0 5px 5px rgba(117, 34, 17, 0.17), 0 15px rgba(255, 255, 255, 0.25) inset;
+  box-shadow: 0 -2px 0 3px #f97063 inset, 0 5px 5px rgba(188, 23, 7, 0.17), 0 15px rgba(255, 255, 255, 0.25) inset;
   cursor: pointer;
   display: inline-block;
   height: 5vw;
@@ -97,5 +96,23 @@ li.wrong {
   color: white;
   font-size: 1em; }
   .btn-pink:hover {
+    background: #333;
+    box-shadow: 0 -2px 0 3px #1a1a1a inset, 0 5px 5px rgba(0, 0, 0, 0.17), 0 15px rgba(255, 255, 255, 0.32) inset; }
+
+.btn-blue {
+  background: #598EFF;
+  border: 3px solid #fff;
+  border-radius: 100%;
+  box-shadow: 0 -2px 0 3px #266bff inset, 0 5px 5px rgba(0, 45, 140, 0.17), 0 15px rgba(255, 255, 255, 0.25) inset;
+  cursor: pointer;
+  display: inline-block;
+  height: 5vw;
+  width: 5vw;
+  text-align: center;
+  height: 100px;
+  width: 100px;
+  color: white;
+  font-size: 1em; }
+  .btn-blue:hover {
     background: #333;
     box-shadow: 0 -2px 0 3px #1a1a1a inset, 0 5px 5px rgba(0, 0, 0, 0.17), 0 15px rgba(255, 255, 255, 0.32) inset; }

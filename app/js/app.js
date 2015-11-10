@@ -35,7 +35,8 @@ fifth = {
 },
 questions = [first, second, third, fourth, fifth],
 answers = [first, second, third, fourth, fifth],
-score = 0;
+score = 0,
+page = 1;
 
 $.fn.randomize = function(selector){
     var $elems = selector ? $(this).find(selector) : $(this).children(),
@@ -62,6 +63,13 @@ function questionMaker(arr) {
     $('div').randomize('li');
 }
 
+function checkLast() {
+    if (page == 6 && score < 5) {
+        $('#pt-main').find('.btn-pink').hide();
+        $('#pt-main').find('.page-current').append("<h1 class='pt-page-moveFromRight' style='color:black'>No burger here! Please hit the button below to refresh the page and try again!</h1><button class='btn-blue'>Refresh</button>");
+    }
+}
+
 $(document).ready(function() {
 
     questionMaker(questions);
@@ -75,8 +83,9 @@ $(document).ready(function() {
         function (e) {
             pc.removeClass('pt-page-moveToLeft');
             listItems.removeClass('pt-page-moveToLeft');
-            pc.remove();
+            pc.hide();
             questionMaker(questions);
+            checkLast();
         })
 		var current = $(".page-current").removeClass('page-current');
         	if(current.next() && current.next().length){
@@ -85,8 +94,12 @@ $(document).ready(function() {
 	      current.siblings(":first").addClass('page-current');
 		}
 
+        page += 1;
+
 	});
 
+    checkLast();
+    
 });
 
 $(document).on('click', 'li', function() {
@@ -96,22 +109,30 @@ $(document).on('click', 'li', function() {
             $(this).addClass('correct');
             score += 1;
             $('li').not(this).addClass('wrong');
+            if (score == 1) {
+                $('.burger-box').append('<img src="../images/top-bun.svg" style="height:100px;width:100px;float:right"></img>');
+        }
+            if (score == 2) {
+                $('.burger-box').prepend('<img src="../images/lettuce.svg" style="height:100px;width:100px;float:right"></img>');
+            }
+            else if (score == 3) {
+                $('.burger-box').prepend('<img src="../images/tomatoes.svg" style="height:100px;width:100px;float:right"></img>');
+            }
+            else if (score == 4) {
+                $('.burger-box').prepend('<img src="../images/patty.svg" style="height:100px;width:100px;float:right"></img>');
+            }
+            else if (score == 5) {
+                $('.burger-box').prepend('<img src="../images/bottom-bun.svg" style="height:100px;width:100px;float:right"></img>');
+            }
         } else {
             $('li').click(false);
             $('li').not('.CA').addClass('wrong');
             $('.CA').addClass('correct');
         }
     }
-    console.log($('li').closest('h2').text());
+
 });
 
-/* 
-
-if ( $(this).closest('h2').text() === answers[i].question) {
-    $('.burger-box').append('<img src="../images/top-bun.svg" style="height:100px;width:100px;float:right"></img>');
-}
- else if ( $(this).closest('h2').text() === answers[i].question) {
-    $('.burger-box').append('<img src="../images/lettuce.svg" style="height:100px;width:100px;float:right"></img>');
-}
-
-*/
+$(document).on('click', '.btn-blue', function() {
+    location.reload(true);
+});

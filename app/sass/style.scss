@@ -1,9 +1,5 @@
-// alt background color 598EFF
-
-$pink: #E97E69;
-
 body {
-  background-color : #5080E5;
+  background-color : #7BB7FA;
   color: white;
   font-family: Helvetica Neue;
   margin: 0;
@@ -73,14 +69,14 @@ a:hover {
 }
 
 $hover-color: #E5B850;
-$box-color: #F29648;
+$box-color: #AE5D56;
 
 li.selected {
   border: 10px solid #F2E148;
 }
 
 li.correct {
-  background-color: #85B22C;
+  background-color: #44AE72;
 }
 
 li.wrong {
@@ -93,7 +89,6 @@ li.wrong {
   position: absolute;
   bottom: 0;
   right: 0;
-  border: 5px solid black;
 }
 
 .guess-box {
@@ -104,6 +99,9 @@ li.wrong {
 }
 
 /* ----- submit button ----- */
+
+$pink: #FB9D94;
+$blue: #598EFF;
 
 @mixin round-button($baseColor:$pink, $hoverBaseColor:#333, $diameter:5vw) {
   background: $baseColor;
@@ -128,4 +126,14 @@ li.wrong {
   width: 100px;
   color: white;
   font-size: 1em;
+}
+
+.btn-blue {
+  @include round-button($blue);
+  text-align: center;
+  height: 100px;
+  width: 100px;
+  color: white;
+  font-size: 1em;
+
 }
