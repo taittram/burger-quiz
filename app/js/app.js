@@ -80,7 +80,7 @@ function finishedQuiz() {
         pMain.find('h2').hide();
         pMain.find('li').hide();
         pMain.find('.page-current').append("<h1 class='pt-page-moveFromRight'>Congrats on finishing with a perfect score! Enjoy your burger!</h1>");
-        pMain.find('.page-current').append("<img class='pt-page-moveFromRight' src='http://imgh.us/burger_1.svg' style='height:auto;width:70%;margin-left:7%;margin-top:-5%'>");
+        pMain.find('.page-current').append("<img class='pt-page-moveFromRight' src='http://imgh.us/burger_1.svg' style='height:auto;width:70%;margin-left:7%;margin-top:-3%'>");
 
     }
 }
