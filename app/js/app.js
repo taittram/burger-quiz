@@ -126,19 +126,19 @@ $(document).on('click', 'li', function() {
             score += 1;
             $('li').not(this).addClass('wrong');
             if (score == 1) {
-                $('.burger-box').append('<img src="../images/top-bun.svg" style="height:100px;width:100px;float:right"></img>');
+                $('.burger-box').append('<img src="../images/top-bun.svg" alt="top-bun" style="height:100px;width:100px;float:right"></img>');
         }
             else if (score == 2) {
-                $('.burger-box').prepend('<img src="../images/lettuce.svg" style="height:100px;width:100px;float:right"></img>');
+                $('.burger-box').prepend('<img src="../images/lettuce.svg" alt="lettuce" style="height:100px;width:100px;float:right"></img>');
             }
             else if (score == 3) {
-                $('.burger-box').prepend('<img src="../images/tomatoes.svg" style="height:100px;width:100px;float:right"></img>');
+                $('.burger-box').prepend('<img src="../images/tomatoes.svg" alt="tomatoes" style="height:100px;width:100px;float:right"></img>');
             }
             else if (score == 4) {
-                $('.burger-box').prepend('<img src="../images/patty.svg" style="height:100px;width:100px;float:right"></img>');
+                $('.burger-box').prepend('<img src="../images/patty.svg" alt="patty" style="height:100px;width:100px;float:right"></img>');
             }
             else if (score == 5) {
-                $('.burger-box').prepend('<img src="../images/bottom-bun.svg" style="height:100px;width:100px;float:right"></img>');
+                $('.burger-box').prepend('<img src="../images/bottom-bun.svg" alt="bottom-bun" style="height:100px;width:100px;float:right"></img>');
             }
         } else {
             $('li').click(false);
