@@ -1,5 +1,5 @@
 body {
-  background-color: #5080E5;
+  background-color: #7BB7FA;
   color: white;
   font-family: Helvetica Neue;
   margin: 0;
@@ -7,21 +7,24 @@ body {
   text-align: center;
   overflow: auto; }
 
+h1:first-child {
+  font-size: 2.5em; }
+
+.pt-page h2 {
+  margin-top: 90px;
+  font-size: 1.7em; }
+
 /* ----- page animations ----- */
 .pt-perspective {
   position: relative;
   width: 100%;
   height: 100%;
-  -webkit-perspective: 1200px;
-  -moz-perspective: 1200px;
   perspective: 1200px; }
 
 .pt-page-moveToLeft {
-  -webkit-animation: moveToLeft .6s ease both;
   animation: moveToLeft .6s ease both; }
 
 .pt-page-moveFromRight {
-  -webkit-animation: moveFromRight .6s ease both;
   animation: moveFromRight .6s ease both; }
 
 @-webkit-keyframes moveToLeft {
@@ -33,15 +36,56 @@ body {
   from {
     -webkit-transform: translateX(100%); } }
 
-.start-page {
-  margin-top: 50%; }
+/* ----- boxes ----- */
+ul {
+  text-align: center; }
+
+li {
+  margin: 30px 20px 30px 20px;
+  display: inline-block;
+  list-style: none;
+  font-size: 1.3em;
+  height: 150px;
+  width: 150px;
+  border-radius: 20px; }
+
+a {
+  text-decoration: none;
+  display: table-cell;
+  vertical-align: middle;
+  height: 150px;
+  width: 150px; }
+
+a:hover {
+  cursor: pointer; }
+
+li.selected {
+  border: 10px solid #F2E148; }
+
+li.correct {
+  background-color: #44AE72; }
+
+li.wrong {
+  background-color: #424D65; }
+
+.burger-box {
+  height: 100px;
+  width: 500px;
+  position: absolute;
+  bottom: 0;
+  right: 0; }
+
+.guess-box {
+  background-color: #AE5D56; }
+  .guess-box:hover {
+    background-color: #E5B850; }
 
 /* ----- submit button ----- */
 .btn-pink {
-  background: #E97E69;
+  background: #FB9D94;
   border: 3px solid #fff;
   border-radius: 100%;
-  box-shadow: 0 -2px 0 3px #e2583d inset, 0 5px 5px rgba(117, 34, 17, 0.17), 0 15px rgba(255, 255, 255, 0.25) inset;
+  box-shadow: 0 -2px 0 3px #f97063 inset, 0 5px 5px rgba(188, 23, 7, 0.17), 0 15px rgba(255, 255, 255, 0.25) inset;
   cursor: pointer;
   display: inline-block;
   height: 5vw;
@@ -52,5 +96,23 @@ body {
   color: white;
   font-size: 1em; }
   .btn-pink:hover {
+    background: #333;
+    box-shadow: 0 -2px 0 3px #1a1a1a inset, 0 5px 5px rgba(0, 0, 0, 0.17), 0 15px rgba(255, 255, 255, 0.32) inset; }
+
+.btn-blue {
+  background: #598EFF;
+  border: 3px solid #fff;
+  border-radius: 100%;
+  box-shadow: 0 -2px 0 3px #266bff inset, 0 5px 5px rgba(0, 45, 140, 0.17), 0 15px rgba(255, 255, 255, 0.25) inset;
+  cursor: pointer;
+  display: inline-block;
+  height: 5vw;
+  width: 5vw;
+  text-align: center;
+  height: 100px;
+  width: 100px;
+  color: white;
+  font-size: 1em; }
+  .btn-blue:hover {
     background: #333;
     box-shadow: 0 -2px 0 3px #1a1a1a inset, 0 5px 5px rgba(0, 0, 0, 0.17), 0 15px rgba(255, 255, 255, 0.32) inset; }
