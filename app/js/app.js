@@ -65,8 +65,23 @@ function questionMaker(arr) {
 
 function checkLast() {
     if (page == 6 && score < 5) {
-        $('#pt-main').find('.btn-pink').hide();
-        $('#pt-main').find('.page-current').append("<h1 class='pt-page-moveFromRight' style='color:black'>No burger here! Please hit the button below to refresh the page and try again!</h1><button class='btn-blue'>Refresh</button>");
+        var pMain = $('#pt-main');
+        pMain.find('.btn-pink').hide();
+        pMain.find('h2').hide();
+        pMain.find('li').hide();
+        pMain.find('.page-current').append("<h1 class='pt-page-moveFromRight' style='color:black;margin-top:10%'>No burger here! Please hit the button below to refresh the page and try again!</h1><button class='btn-blue pt-page-moveFromRight' style='margin-top:5%'>Refresh</button>");
+    }
+}
+
+function finishedQuiz() {
+    if (page == 6 && score == 5) {
+        var pMain = $('#pt-main');
+        pMain.find('.btn-pink').hide();
+        pMain.find('h2').hide();
+        pMain.find('li').hide();
+        pMain.find('.page-current').append("<h1 class='pt-page-moveFromRight'>Congrats on finishing with a perfect score! Enjoy your burger!</h1>");
+        pMain.find('.page-current').append("<img class='pt-page-moveFromRight' src='../images/burger.svg' style='height:auto;width:80%;margin-left:7%'>");
+
     }
 }
 
@@ -75,6 +90,7 @@ $(document).ready(function() {
     questionMaker(questions);
 
 	$(".btn-pink").on("click", function() {
+        page += 1;
 		pc = $('.page-current');
         listItems = $('ul');
         pc.addClass('pt-page-moveToLeft');
@@ -85,8 +101,8 @@ $(document).ready(function() {
             listItems.removeClass('pt-page-moveToLeft');
             pc.hide();
             questionMaker(questions);
-            checkLast();
         })
+
 		var current = $(".page-current").removeClass('page-current');
         	if(current.next() && current.next().length){
                 current.next().addClass('page-current');
@@ -94,15 +110,15 @@ $(document).ready(function() {
 	      current.siblings(":first").addClass('page-current');
 		}
 
-        page += 1;
+        checkLast();
+        finishedQuiz();
 
 	});
-
-    checkLast();
     
 });
 
 $(document).on('click', 'li', function() {
+    
     $(this).addClass('selected');
     for (var i = 0; i <= answers.length; i++) {
         if ($(this).text() === answers[i].answer) {
@@ -112,7 +128,7 @@ $(document).on('click', 'li', function() {
             if (score == 1) {
                 $('.burger-box').append('<img src="../images/top-bun.svg" style="height:100px;width:100px;float:right"></img>');
         }
-            if (score == 2) {
+            else if (score == 2) {
                 $('.burger-box').prepend('<img src="../images/lettuce.svg" style="height:100px;width:100px;float:right"></img>');
             }
             else if (score == 3) {
