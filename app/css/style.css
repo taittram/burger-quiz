@@ -1,18 +1,19 @@
 body {
   background-color: #7BB7FA;
   color: white;
-  font-family: Helvetica Neue;
   margin: 0;
   padding: 0;
   text-align: center;
   overflow: auto; }
 
 h1:first-child {
-  font-size: 2.5em; }
+  font-size: 2.5em;
+  font-family: 'Gloria Hallelujah', cursive; }
 
 .pt-page h2 {
   margin-top: 90px;
-  font-size: 1.7em; }
+  font-size: 1.7em;
+  font-family: 'Ubuntu', sans-serif; }
 
 /* ----- page animations ----- */
 .pt-perspective {
@@ -47,7 +48,8 @@ li {
   font-size: 1.3em;
   height: 150px;
   width: 150px;
-  border-radius: 20px; }
+  border-radius: 20px;
+  font-family: 'Exo', sans-serif; }
 
 a {
   text-decoration: none;
