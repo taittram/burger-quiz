@@ -28,10 +28,12 @@ h1:first-child {
 }
 
 .pt-page-moveToLeft {
+  -moz-animation: moveToLeft .6s ease both;
   -webkit-animation: moveToLeft .6s ease both;
 	animation: moveToLeft .6s ease both;
 }
 .pt-page-moveFromRight {
+  -moz-animation: moveFromRight .6s ease both;
   -webkit-animation: moveFromRight .6s ease both;
 	animation: moveFromRight .6s ease both;
 }
