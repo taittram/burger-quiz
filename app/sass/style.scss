@@ -28,9 +28,11 @@ h1:first-child {
 }
 
 .pt-page-moveToLeft {
+  -webkit-animation: moveToLeft .6s ease both;
 	animation: moveToLeft .6s ease both;
 }
 .pt-page-moveFromRight {
+  -webkit-animation: moveFromRight .6s ease both;
 	animation: moveFromRight .6s ease both;
 }
 
@@ -38,8 +40,16 @@ h1:first-child {
 	from { }
 	to { -webkit-transform: translateX(-100%); }
 }
+@keyframes moveToLeft {
+  from { }
+  to { -webkit-transform: translateX(-100%); transform: translateX(-100%); }
+}
+
 @-webkit-keyframes moveFromRight {
 	from { -webkit-transform: translateX(100%); }
+}
+@keyframes moveFromRight {
+  from { -webkit-transform: translateX(100%); transform: translateX(100%); }
 }
 
 /* ----- boxes ----- */

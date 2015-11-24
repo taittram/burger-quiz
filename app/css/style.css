@@ -24,9 +24,11 @@ h1:first-child {
   perspective: 1200px; }
 
 .pt-page-moveToLeft {
+  -webkit-animation: moveToLeft .6s ease both;
   animation: moveToLeft .6s ease both; }
 
 .pt-page-moveFromRight {
+  -webkit-animation: moveFromRight .6s ease both;
   animation: moveFromRight .6s ease both; }
 
 @-webkit-keyframes moveToLeft {
@@ -34,9 +36,20 @@ h1:first-child {
   to {
     -webkit-transform: translateX(-100%); } }
 
+@keyframes moveToLeft {
+  from { }
+  to {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%); } }
+
 @-webkit-keyframes moveFromRight {
   from {
     -webkit-transform: translateX(100%); } }
+
+@keyframes moveFromRight {
+  from {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%); } }
 
 /* ----- boxes ----- */
 ul {
