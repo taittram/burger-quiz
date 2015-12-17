@@ -4,22 +4,18 @@ var browserSync = require('browser-sync');
 var minifyCSS = require('gulp-minify-css');
 var autoprefixer = require('gulp-autoprefixer');
 
+var autoprefixerOptions = {
+  browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
+};
+
 gulp.task('sass', function(){
   return gulp.src('app/sass/**/*.scss')
     .pipe(sass()) // Converts Sass to CSS with gulp-sass
     .pipe(gulp.dest('app/css'))
+    .pipe(autoprefixer(autoprefixerOptions))
     .pipe(browserSync.reload({
       stream: true
     }))
-});
-
-gulp.task('autoprefixer', function() {
-    return gulp.src('app/css/style.css')
-    .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: false
-      }))
-    .pipe(gulp.dest('app/css/style.css'));
 });
 
 gulp.task('browserSync', function() {
@@ -37,7 +33,7 @@ gulp.task('minify-css', function() {
 });
 
 //Watch task
-gulp.task('watch', ['browserSync', 'sass', 'minify-css', 'autoprefixer'], function() {
+gulp.task('watch', ['browserSync', 'sass', 'minify-css'], function() {
     gulp.watch('app/sass/**/*.scss',['sass']);
     gulp.watch('app/*.html', browserSync.reload);
     gulp.watch('app/js/app.js', browserSync.reload);
