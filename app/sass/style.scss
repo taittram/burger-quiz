@@ -55,7 +55,8 @@ li {
     height: 150px;
     width: 150px;
     border-radius: 20px;
-    font-family: 'Exo', sans-serif;
+    font-weight: 300;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 a {
@@ -114,7 +115,7 @@ $blue: #598EFF;
   display: inline-block;
   height: $diameter;
   width: $diameter;
-  
+
   &:hover {
     background: $hoverBaseColor;
     box-shadow: 0 -2px 0 3px darken($hoverBaseColor, 10%) inset, 0 5px 5px rgba(darken($hoverBaseColor, 40%), 0.17), 0 15px rgba(#fff, 0.32) inset;
