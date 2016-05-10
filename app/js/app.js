@@ -89,9 +89,9 @@ $(document).ready(function() {
 
     questionMaker(questions);
 
-	$(".btn-pink").on("click", function() {
+    $(".btn-pink").on("click", function() {
         page += 1;
-		pc = $('.page-current');
+        pc = $('.page-current');
         listItems = $('ul');
         pc.addClass('pt-page-moveToLeft');
         listItems.addClass('pt-page-moveToLeft');
@@ -103,17 +103,17 @@ $(document).ready(function() {
             questionMaker(questions);
         })
 
-		var current = $(".page-current").removeClass('page-current');
-        	if(current.next() && current.next().length){
+        var current = $(".page-current").removeClass('page-current');
+            if(current.next() && current.next().length){
                 current.next().addClass('page-current');
-	    } else {
-	      current.siblings(":first").addClass('page-current');
-		}
+        } else {
+          current.siblings(":first").addClass('page-current');
+        }
 
         checkLast();
         finishedQuiz();
 
-	});
+    });
     
 });
 
